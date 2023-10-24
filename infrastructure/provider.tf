@@ -8,8 +8,8 @@ terraform {
 
   backend "s3" {
     bucket         	   = "terraform-workshop-mlreply"
-    key              	   = "state/terraform.tfstate"
-    region         	   = "eu-central-1"
+    key              	   = "${var.user_name}_state/terraform.tfstate"
+    region         	   = var.aws_region
   }
 }
 
