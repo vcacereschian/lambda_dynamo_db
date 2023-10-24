@@ -11,7 +11,7 @@ variable "log_group_name" {
    default = "ecs/mlops"
 }
 variable "user_name" {
-  default     = "tf_workshop_name" # You can set a default value or provide it when running Terraform.
+  default     = "raza" # You can set a default value or provide it when running Terraform.
 }
 variable "validity" {
    default = "2"
