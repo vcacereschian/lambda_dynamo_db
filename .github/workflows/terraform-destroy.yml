@@ -1,0 +1,35 @@
+name: Terraform Destroy
+
+on:
+  workflow_dispatch 
+
+jobs:
+  destroy-terraform:
+    runs-on: ubuntu-latest
+
+    steps:
+
+      - name: Configure AWS Credentials
+        run: |
+          echo "AWS_ACCESS_KEY_ID=${{ secrets.AWS_ACCESS_KEY_ID }}" >> $GITHUB_ENV
+          echo "AWS_SECRET_ACCESS_KEY=${{ secrets.AWS_SECRET_ACCESS_KEY }}" >> $GITHUB_ENV
+          echo "AWS_DEFAULT_REGION=${{ secrets.AWS_DEFAULT_REGION }}" >> $GITHUB_ENV
+      - name: Checkout Repository
+        uses: actions/checkout@v3
+
+      - name: Terraform Init
+        id: init
+        run: |
+          cd infrastructure
+          terraform init  
+        
+      - name: Show Destroy plan
+        run: |
+          cd infrastructure
+          terraform plan -destroy
+
+      - name: Destroying terraform here
+        run: |
+          cd infrastructure
+          terraform destroy -auto-approve
+          
