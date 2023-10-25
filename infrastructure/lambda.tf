@@ -21,6 +21,11 @@ resource "aws_lambda_function" "create-note" {
  function_name = var.user_name 
  role = aws_iam_role.iam_for_lambda.arn
  filename = "lambdas/create_note.zip"
+
+  tags = {
+    Name        = var.user_name
+
+  }
 }
 
 resource "aws_lambda_function_url" "test_latest" {

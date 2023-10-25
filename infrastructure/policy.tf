@@ -13,6 +13,9 @@ resource "aws_iam_role" "iam_for_lambda" {
      }
    ]
   })
+  tags = {
+    tag-key = var.user_name
+  }
 }
           
 resource "aws_iam_role_policy_attachment" "lambda_policy" {
