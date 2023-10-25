@@ -9,9 +9,10 @@ data "archive_file" "create-note-archive" {
 resource "aws_lambda_function" "create-note" {
  environment {
    variables = {
-     NOTES_TABLE = aws_dynamodb_table.tf_notes_table.name
+     NOTES_TABLE = aws_dynamodb_table.tf_notes_table.name,
+     REGION = var.aws_region
    }
-   
+
  }
  memory_size = "128"
  timeout = 10
