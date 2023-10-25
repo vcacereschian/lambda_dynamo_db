@@ -4,14 +4,14 @@ variable "aws_region" {
 
 
 variable "user_name" {
-  default     = "<your name goes here>" # e.g raza
+  default     = "victor" # e.g raza
 }
 variable "project" {
   default     = "MLOps Workshop" # You can set a default value or provide it when running Terraform.
 }
 
 variable "user" {
-  default     = "<your id goes here>" # e.g r.ali@reply.de
+  default     = "v.cacereschian@reply.de" # e.g r.ali@reply.de
 }
 
 variable "validity" {
