@@ -1,3 +1,1 @@
- curl -X POST -H "Content-Type: application/json" -d
-  '{"id": "53514", "fn": "Shayaaan", "ln": "Farooqi", "date_of_birth": "12021194"}'
-   https://tincdpqyyj3xbjlm55baehcxay0uxcbx.lambda-url.eu-central-1.on.aws/
+curl -X POST -H "Content-Type: application/json" -d '{"id": "pid", "name": "test_trial"}' <lambda_url_here>

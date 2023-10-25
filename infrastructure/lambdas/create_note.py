@@ -17,7 +17,8 @@ def lambda_handler(event, context):
     action: dict[str, str] = json.loads(event["body"]) 
     params = { 
         # "GameTitle": action['game_name'],
-        "noteId": action['id']
+        "noteId": action['id'],
+        "name": action['name']
 
     }
     try:

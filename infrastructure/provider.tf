@@ -8,7 +8,7 @@ terraform {
 
   backend "s3" {
     bucket         	   = "terraform-workshop-mlreply"
-    key              	   = "mlops_handson/raza_terraform.tfstate"
+    key              	   = "mlops_handson/<your_name_goes_here>_terraform.tfstate"
     region         	   = "eu-central-1"
   }
 }
