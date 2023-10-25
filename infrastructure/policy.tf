@@ -14,7 +14,11 @@ resource "aws_iam_role" "iam_for_lambda" {
    ]
   })
   tags = {
-    tag-key = var.user_name
+    Name   = var.user_name,
+    project = var.project,
+    user = var.user,
+    validity = var.validity
+
   }
 }
           

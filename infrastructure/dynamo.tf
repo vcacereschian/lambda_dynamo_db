@@ -9,8 +9,11 @@ resource "aws_dynamodb_table" "tf_notes_table" {
    } 
    hash_key = "noteId" 
 
-   tags = {
-    Name        = var.user_name
+  tags = {
+    Name   = var.user_name,
+    project = var.project,
+    user = var.user,
+    validity = var.validity
 
   }
 

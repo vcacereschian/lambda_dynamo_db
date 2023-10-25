@@ -24,7 +24,10 @@ resource "aws_lambda_function" "create-note" {
  filename = "lambdas/create_note.zip"
 
   tags = {
-    Name        = var.user_name
+    Name   = var.user_name,
+    project = var.project,
+    user = var.user,
+    validity = var.validity
 
   }
 }
@@ -43,4 +46,10 @@ cors {
   }
 
 
+
+
+}
+
+output "lambda_function_url" {
+  value = aws_lambda_function.example_lambda.invoke_arn
 }
