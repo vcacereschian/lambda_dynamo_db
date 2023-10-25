@@ -51,5 +51,5 @@ cors {
 }
 
 output "lambda_function_url" {
-  value = aws_lambda_function.example_lambda.invoke_arn
+  value = aws_lambda_function.create-note.invoke_arn
 }
